@@ -1,3 +1,5 @@
+import 'employee.dart';
+
 final double discount = 0.15;
 
 void main(List<String> args) {
@@ -77,6 +79,9 @@ void main(List<String> args) {
   ShowMyNumber();
   ShowMyNumberByParams(number: 666, name: "Gizem");
   print(calculateDiscount(price));
+
+  Employee newEmployee = Employee("Hakan", 20000, "Technical Office");
+  PrintEmployeeDepartment(newEmployee);
 }
 
 void ShowMyNumber() {
