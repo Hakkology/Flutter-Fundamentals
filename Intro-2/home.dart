@@ -20,12 +20,12 @@ void main() {
   //     print("You have failed in life.");
   // }
 
-  GetUserRoleFunction(user1.role);
-  user1.role.GetUserRole();
-
-  String word = "hello";
+  print(GetUserRoleFunction(user1.role));
+  //print(user1.role.GetUserRole());
+  String word = "You may be admin but you shall never take me alive.";
   print(word.upperCaseFirstWord());
-  print(word);
+
+  print(GetUserRoleFunction(user3.role));
 
   word.Translation();
 }
