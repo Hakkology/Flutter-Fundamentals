@@ -16,5 +16,6 @@ void main() {
       print("Client interface at your service.");
       break;
     default:
+      print("You have failed in life.");
   }
 }
