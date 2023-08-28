@@ -43,12 +43,15 @@ Widget _buildUserCard(BuildContext context, int number) {
           Icons.arrow_circle_right,
           size: 40,
         ),
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+        onPressed: () async {
+          bool isTrue = await Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) {
             return DetailScreen(
               appBarTitle: "Name ${(number + 1)}",
             );
           }));
+          // ignore: avoid_print
+          print("Is it true: $isTrue");
         },
       ),
     ),

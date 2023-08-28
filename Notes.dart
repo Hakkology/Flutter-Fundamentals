@@ -101,4 +101,9 @@ void main() {
 Add a widget as stateapp and extend it;
 home screen example given.
 
+
+Navigation functionality allows you to swap from one widget or from one
+page to another. -push adds a page on top and -pop removes that page.
+-canpop checks if there is any other screen on the back side.
+
 */

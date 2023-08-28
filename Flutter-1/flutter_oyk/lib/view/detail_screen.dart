@@ -13,13 +13,18 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.amberAccent,
-          foregroundColor: Colors.blueGrey,
-          title: Text(
-            appBarTitle,
-          )),
-    );
+        appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.amberAccent,
+            foregroundColor: Colors.blueGrey,
+            title: Text(
+              appBarTitle,
+            )),
+        body: Center(
+          child: ElevatedButton(
+            child: const Text("Back"),
+            onPressed: () => Navigator.pop(context, true),
+          ),
+        ));
   }
 }
