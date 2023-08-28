@@ -1,6 +1,6 @@
 /*
 
-Dart/Flutter Notes
+Dart Notes
 
 Flutter is a framework which is frequently updated and renewed.
 
@@ -50,5 +50,32 @@ If required keyword is available
   - without the required keyword, parameter should be set as nullable.
     -> which requires an actual null check ?!?
 
+Flutter Notes
+
+- Widgets are not shown but drawn on the application. 
+- Assume a variable is there. Once drawn, variables do not change.
+- Set State shows that variables also change on widgets.
+
+- Widgets are whether stateless or with state, which determines if a value
+within widget is subject to change by any means.
+
+- Vector and bmp images differ from each other in terms of pixel presentation.
+Bmp images increase the size of pixels on zoom, vectors do not do that.
+- SVG is a world standard for vector representation. -> Research this.
+
+- Google has created icons and gave these free license for our use. 
+There are many icons that can be used for development. Link is below:
+https://fonts.google.com/icons
+
+- late means that initilization is not complete.
+if the parameter is not going to be null or will be available later, add late.
+Do not make it nullable.
+
+https://www.xdguru.com/wisefood-free-ui-kit-xd/
+- made of drawer, text, icon, appbar on top,
+- made of textfield, image, text on upper side,
+- made of card and list on below side for widget listing.
+
+- Scaffold also covers the appbar.
 
 */
