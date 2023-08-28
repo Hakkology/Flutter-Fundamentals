@@ -78,4 +78,27 @@ https://www.xdguru.com/wisefood-free-ui-kit-xd/
 
 - Scaffold also covers the appbar.
 
+void main() {
+  runApp(const StateApp());
+}
+
+class StateApp extends StatelessWidget {
+  const StateApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HomeScreen(),
+    );
+  }
+}
+
+to run a single app on widget builder as main function;
+void main() {
+  runApp(const <AppName>());
+}
+
+Add a widget as stateapp and extend it;
+home screen example given.
+
 */
