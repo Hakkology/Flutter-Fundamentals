@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_oyk/model/user.dart';
 
 class DetailScreen extends StatelessWidget {
-  final String appBarTitle;
+  final User user;
 
   const DetailScreen({
     Key? key,
     Color? backgroundColor,
     Color? foregroundColor,
-    required this.appBarTitle,
+    required this.user,
   }) : super(key: key);
 
   @override
@@ -18,7 +19,7 @@ class DetailScreen extends StatelessWidget {
             backgroundColor: Colors.amberAccent,
             foregroundColor: Colors.blueGrey,
             title: Text(
-              appBarTitle,
+              user.name + user.surname,
             )),
         body: Center(
           child: ElevatedButton(

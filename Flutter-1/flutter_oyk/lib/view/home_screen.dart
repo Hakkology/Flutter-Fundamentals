@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_oyk/model/user.dart';
 
 import 'detail_screen.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -14,6 +15,13 @@ class _HomeScreenState extends State<HomeScreen> {
   final String title = "Name";
 
   bool isRead = false;
+  List<User> userList = List.generate(
+    60,
+    (index) => User(
+        name: "Name $index ",
+        surname: 'Surname',
+        userColor: Colors.deepPurple.shade200),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: 60,
+        itemCount: userList.length,
         itemBuilder: (context, index) => _buildUserCard(context, index),
       ),
       backgroundColor: Colors.deepPurple,
@@ -39,13 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
           size: 40,
         ),
         title: Text(
-          "$title ${(index + 1)}",
+          userList[index].name,
           style: const TextStyle(
             fontSize: 22,
           ),
         ),
-        subtitle: const Text(
-          "Surname",
+        subtitle: Text(
+          userList[index].surname,
         ),
         trailing: IconButton(
           icon: const Icon(
@@ -56,11 +64,11 @@ class _HomeScreenState extends State<HomeScreen> {
             navigateToDetail(context, index);
 
             setState(() {
-              isRead = true;
+              userList[index].userColor = Colors.deepPurple.shade100;
             });
           },
         ),
-        tileColor: isRead ? Colors.white : Colors.deepPurple.shade100,
+        tileColor: userList[index].userColor,
       ),
     );
   }
@@ -70,12 +78,12 @@ class _HomeScreenState extends State<HomeScreen> {
       MaterialPageRoute(
         builder: (context) {
           return DetailScreen(
-            appBarTitle: "$title ${(index + 1)}",
+            user: userList[index],
           );
         },
       ),
     );
     // ignore: avoid_print
-    print("TRUE MU:  $isTrue");
+    print("Is is true:  $isTrue");
   }
 }
