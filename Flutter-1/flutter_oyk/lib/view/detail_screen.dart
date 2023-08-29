@@ -22,7 +22,10 @@ class DetailScreen extends StatelessWidget {
             )),
         body: Center(
           child: ElevatedButton(
-            child: const Text("Back"),
+            child: const Text(
+              "Back",
+              textScaleFactor: 2,
+            ),
             onPressed: () => Navigator.pop(context, true),
           ),
         ));
