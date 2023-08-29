@@ -20,7 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
     (index) => User(
         name: "Name $index ",
         surname: 'Surname',
-        userColor: Colors.deepPurple.shade200),
+        userColor: Colors.deepPurple.shade200,
+        isRead: false),
   );
 
   @override
@@ -29,12 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Users"),
         centerTitle: true,
+        backgroundColor: Colors.amberAccent,
+        foregroundColor: Colors.blueGrey,
       ),
       body: ListView.builder(
         itemCount: userList.length,
         itemBuilder: (context, index) => _buildUserCard(context, index),
       ),
-      backgroundColor: Colors.deepPurple,
     );
   }
 
@@ -43,7 +45,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: ListTile(
         leading: Icon(
           Icons.person,
-          color: Colors.deepPurple.shade300,
+          color: userList[index].isRead
+              ? Colors.deepPurple.shade300
+              : Colors.deepPurple.shade100,
           size: 40,
         ),
         title: Text(
@@ -64,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
             navigateToDetail(context, index);
 
             setState(() {
-              userList[index].userColor = Colors.deepPurple.shade100;
+              userList[index].isRead = true;
             });
           },
         ),
