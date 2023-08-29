@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'employee.dart';
 
 final double discount = 0.15;
@@ -32,6 +34,7 @@ void main(List<String> args) {
     isLoading = false;
   }
 
+  // ignore: unnecessary_null_comparison
   if (unknown != null) {
     print("You named it Unknown for a reason.");
   }

@@ -10,6 +10,6 @@ class User {
     required this.name,
     required this.surname,
     required this.userColor,
-    required this.isRead,
+    this.isRead = false,
   });
 }

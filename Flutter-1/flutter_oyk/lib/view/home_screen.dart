@@ -43,11 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildUserCard(BuildContext context, int index) {
     return Card(
       child: ListTile(
-        leading: Icon(
+        leading: const Icon(
           Icons.person,
-          color: userList[index].isRead
-              ? Colors.deepPurple.shade300
-              : Colors.deepPurple.shade100,
+          color: Colors.blueGrey,
           size: 40,
         ),
         title: Text(
@@ -72,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
         ),
-        tileColor: userList[index].userColor,
+        tileColor: userList[index].isRead
+            ? Colors.deepPurple.shade100
+            : Colors.deepPurple.shade300,
       ),
     );
   }

@@ -106,4 +106,10 @@ Navigation functionality allows you to swap from one widget or from one
 page to another. -push adds a page on top and -pop removes that page.
 -canpop checks if there is any other screen on the back side.
 
+Stateless widgets cannot have states.
+Stateful widgets have states which are added through states and this state
+extends the actual widget.
+
+Image.asset for loading images.
+
 */

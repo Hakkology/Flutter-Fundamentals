@@ -22,13 +22,33 @@ class DetailScreen extends StatelessWidget {
               user.name + user.surname,
             )),
         body: Center(
-          child: ElevatedButton(
-            child: const Text(
-              "Back",
-              textScaleFactor: 2,
+            child: Column(
+          children: [
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                width: 350,
+                height: 200,
+                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: const DecorationImage(
+                      image: AssetImage("assets/images/Image1.jpg"),
+                      fit: BoxFit.cover),
+                ),
+              ),
             ),
-            onPressed: () => Navigator.pop(context, true),
-          ),
-        ));
+            ElevatedButton(
+              child: const Text(
+                "Back",
+                textScaleFactor: 2,
+              ),
+              onPressed: () => Navigator.pop(context, true),
+            ),
+          ],
+        )));
   }
 }

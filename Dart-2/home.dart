@@ -3,6 +3,7 @@ import 'string.dart';
 
 void main() {
   User user1 = User(UserRole.Admin, "Ece", DateTime.now());
+  // ignore: unused_local_variable
   User user2 = User(UserRole.User, "Hakan", DateTime.now());
   User user3 = User(UserRole.Client, "Mustafa", DateTime.now());
 
