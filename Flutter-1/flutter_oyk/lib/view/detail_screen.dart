@@ -14,6 +14,7 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.deepPurple.shade100,
         appBar: AppBar(
             centerTitle: true,
             backgroundColor: Colors.amberAccent,
@@ -24,23 +25,8 @@ class DetailScreen extends StatelessWidget {
         body: Center(
             child: Column(
           children: [
-            // const SizedBox(
-            //   height: 20,
-            // ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Container(
-                width: 350,
-                height: 200,
-                padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  image: const DecorationImage(
-                      image: AssetImage("assets/images/Image1.jpg"),
-                      fit: BoxFit.cover),
-                ),
-              ),
-            ),
+            _buildImageAsset("assets/images/Image2.jpg"),
+            _buildImageAsset("assets/images/Image1.jpg"),
             ElevatedButton(
               child: const Text(
                 "Back",
@@ -51,4 +37,19 @@ class DetailScreen extends StatelessWidget {
           ],
         )));
   }
+}
+
+Widget _buildImageAsset(String imagePath) {
+  return Padding(
+    padding: const EdgeInsets.all(20.0),
+    child: Container(
+      width: 350,
+      height: 200,
+      padding: const EdgeInsets.fromLTRB(0, 80, 0, 0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
+      ),
+    ),
+  );
 }
