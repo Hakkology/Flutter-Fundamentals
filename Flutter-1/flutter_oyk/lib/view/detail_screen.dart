@@ -20,7 +20,7 @@ class DetailScreen extends StatelessWidget {
             backgroundColor: Colors.amberAccent,
             foregroundColor: Colors.blueGrey,
             title: Text(
-              user.name + user.surname,
+              user.name + user.state,
             )),
         body: Center(
             child: Column(

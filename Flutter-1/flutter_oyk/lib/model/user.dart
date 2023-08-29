@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class User {
   final String name;
-  final String surname;
+  String state = "Not Read";
   Color userColor;
   bool isRead;
 
   User({
     required this.name,
-    required this.surname,
+    required this.state,
     required this.userColor,
     this.isRead = false,
   });

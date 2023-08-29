@@ -52,12 +52,22 @@ If required keyword is available
 
 Flutter Notes
 
-- Widgets are not shown but drawn on the application. 
-- Assume a variable is there. Once drawn, variables do not change.
-- Set State shows that variables also change on widgets.
+Designs could be for more devices such as phones, tablets, clocks, tvs, 
+computers or automobile interfaces.
+- Responsiveness - not fixed units for measurement and lengths.
+- Adaptive - stateful designs to fit the widget drawings onto a rotating screen.
+
+A design language is necessary for such adaptive conditions. The language
+used in Flutter is "Material Design (3.0 currently)".
+These design principles show us the best possible idea to create the feature
+that is the most convenient for the end user with best accessibility.
 
 - Widgets are whether stateless or with state, which determines if a value
 within widget is subject to change by any means.
+
+- Widgets are not shown but drawn on the application. 
+- Assume a variable is there. Once drawn, variables do not change.
+- SetState shows that variables also change on widgets.
 
 - Vector and bmp images differ from each other in terms of pixel presentation.
 Bmp images increase the size of pixels on zoom, vectors do not do that.

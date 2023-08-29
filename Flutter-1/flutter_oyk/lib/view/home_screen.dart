@@ -18,8 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
   List<User> userList = List.generate(
     60,
     (index) => User(
-        name: "Name $index ",
-        surname: 'Surname',
+        name: "Mail $index ",
+        state: "Not Read",
         userColor: Colors.deepPurple.shade200,
         isRead: false),
   );
@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Users"),
+        title: const Text("Mail List"),
         centerTitle: true,
         backgroundColor: Colors.amberAccent,
         foregroundColor: Colors.blueGrey,
@@ -43,8 +43,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildUserCard(BuildContext context, int index) {
     return Card(
       child: ListTile(
-        leading: const Icon(
-          Icons.person,
+        leading: Icon(
+          userList[index].isRead ? Icons.mail : Icons.mail_lock,
           color: Colors.blueGrey,
           size: 40,
         ),
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         subtitle: Text(
-          userList[index].surname,
+          userList[index].state,
         ),
         trailing: IconButton(
           icon: const Icon(
@@ -67,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             setState(() {
               userList[index].isRead = true;
+              userList[index].state = "Read";
             });
           },
         ),
