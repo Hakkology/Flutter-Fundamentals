@@ -133,6 +133,8 @@ Within the code, it is possible to call if-conditional operations with
 
 Get&Set operations can be achieved through "=>" operator.
 -required tag appears mandatory for specific classes and properties
+Future operations include async - await operations and is required when a
+specific delay or multithreading operations are necessary.
 
 Image.asset for loading images.
 Similarly, images can be put inside a container for further arrangements.
