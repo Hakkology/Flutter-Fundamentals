@@ -141,4 +141,27 @@ Similarly, images can be put inside a container for further arrangements.
 Similarly, any issue can be put inside a padding to give specific distances
 on inset values.
 
+We may also change themes to dark and light and change specific properties.
+We may also choose material 2 and material 3 through a boolean under theme.
+
+debugShowCheckedModeBanner: false,
+removes the debug banner.
+
+flutter pub add get
+this adds the get library to flutter and accelerates development.
+Whether a variable is a string, int or an object can be made observable.
+When a property is observable,
+
+obs is observable,
+obx is observing widget.
+
+In this sense, values no longer need properties such as int or string.
+They are converted to Rxint or Rxstrings, which are observable properties for 
+obx widgets. Although it should be noted that, if there is no dynamic variable 
+inside the widget, it will throw an error. So obx should be used cautiously.
+
+Once this is configured, we no longer have to set stateful widgets but only
+observe specific variables which do change. Normally we would have to set this
+with setstate();
+
 */
