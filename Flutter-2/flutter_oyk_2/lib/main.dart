@@ -1,7 +1,6 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_oyk_2/page2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,28 +12,30 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(useMaterial3: true),
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+          // This is the theme of your application.
+          //
+          // TRY THIS: Try running your application with "flutter run". You'll see
+          // the application has a blue toolbar. Then, without quitting the app,
+          // try changing the seedColor in the colorScheme below to Colors.green
+          // and then invoke "hot reload" (save your changes or press the "hot
+          // reload" button in a Flutter-supported IDE, or press "r" if you used
+          // the command line to start the app).
+          //
+          // Notice that the counter didn't reset back to zero; the application
+          // state is not lost during the reload. To reset the state, use hot
+          // restart instead.
+          //
+          // This works for code too, not just values: Most code changes can be
+          // tested with just a hot reload.
+
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.teal, brightness: Brightness.dark),
+          useMaterial3: true),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -59,17 +60,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _counter = 0.obs;
+  final counter = 0.obs;
+  TextEditingController nameController = TextEditingController();
 
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter.value++;
-    });
+    counter.value++;
   }
 
   @override
@@ -112,12 +107,49 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Obx(
-              () => Text(
-                '${_counter.value}',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-            )
+            Obx(() => Text(
+                  "${counter.value}",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                )),
+            ElevatedButton.icon(
+                onPressed: () async {
+                  String? result = await Get.dialog(
+                      Dialog(
+                        child: Center(
+                            child: Padding(
+                                padding: const EdgeInsets.all(20),
+                                child: Column(children: [
+                                  Text("Merhaba, ben bir diyalogum",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge),
+                                  TextField(controller: nameController),
+                                  TextButton(
+                                      onPressed: () {
+                                        Get.back(result: nameController.text);
+                                      },
+                                      child: const Text("OK")),
+                                  TextButton(
+                                    child: const Text("Cancel"),
+                                    onPressed: () {
+                                      Get.back(result: null);
+                                    },
+                                  )
+                                ]))),
+                      ),
+                      barrierDismissible: false);
+
+                  String name = result ?? "N/A";
+                  Get.snackbar("Hoş geldiniz, $name!", "jksadfkjsdahf");
+                },
+                icon: const Icon(Icons.abc),
+                label: const Text("Click me")),
+            ElevatedButton.icon(
+                onPressed: () {
+                  Get.off(const MySecondPage());
+                },
+                icon: const Icon(Icons.games_rounded),
+                label: const Text("Sayfaya git"))
           ],
         ),
       ),

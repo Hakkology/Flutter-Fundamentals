@@ -130,16 +130,17 @@ MaterialApp, scaffold or cards in order to determine their type.
 
 Within the code, it is possible to call if-conditional operations with
 <bool> ? condition1 : condition2.
+string result ?? "N/A". (if result is not null.)
 
 Get&Set operations can be achieved through "=>" operator.
 -required tag appears mandatory for specific classes and properties
 Future operations include async - await operations and is required when a
 specific delay or multithreading operations are necessary.
 
-Image.asset for loading images.
-Similarly, images can be put inside a container for further arrangements.
-Similarly, any issue can be put inside a padding to give specific distances
-on inset values.
+Image.asset for loading images on file. Image.network for loading images from
+internet.
+Images can be put inside a container for further arrangements. Any issue can 
+be put inside a padding to give specific distances on inset values.
 
 We may also change themes to dark and light and change specific properties.
 We may also choose material 2 and material 3 through a boolean under theme.
@@ -148,9 +149,10 @@ debugShowCheckedModeBanner: false,
 removes the debug banner.
 
 flutter pub add get
-this adds the get library to flutter and accelerates development.
-Whether a variable is a string, int or an object can be made observable.
-When a property is observable,
+this adds the get library to flutter and comes with various changes.
+Whether a variable is a string, int or an object, it can be made observable.
+When a property is observable, observing widgets can set its state without
+a statefulwidget. Defs:
 
 obs is observable,
 obx is observing widget.
@@ -163,5 +165,14 @@ inside the widget, it will throw an error. So obx should be used cautiously.
 Once this is configured, we no longer have to set stateful widgets but only
 observe specific variables which do change. Normally we would have to set this
 with setstate();
+
+Get.to(page) => moves to another page similar to navigation push.
+Get.back() => helps us to return to the previous page similar to navigation 
+pull.
+Get.snackbar => pops a snackbar.
+
+
+
+
 
 */
