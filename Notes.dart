@@ -132,6 +132,9 @@ Within the code, it is possible to call if-conditional operations with
 <bool> ? condition1 : condition2.
 string result ?? "N/A". (if result is not null.)
 
+Textfields require a controller which is added by TextEditingController widget.
+This widget controls the input received from the User.
+
 Get&Set operations can be achieved through "=>" operator.
 -required tag appears mandatory for specific classes and properties
 Future operations include async - await operations and is required when a
@@ -171,6 +174,31 @@ Get.back() => helps us to return to the previous page similar to navigation
 pull.
 Get.snackbar => pops a snackbar.
 
+Get.CLI is configured through 
+flutter pub global activate get_cli
+Following command may be required.
+export PATH="$PATH":"$HOME/.pub-cache/bin
+Write "get" on terminal to check if the tool is functioning properly.
+get init is used to initiate get tool. Choose getx pattern and overwrite app.
+This deletes current state of application.
+
+we can also create new pages and routes by using:
+get create page:<pagename>
+
+get generate model with "assets/user.json"
+Takes a json file and generates a specific model for this.
+get generate model with assets/login.json --skipProvider
+Similar but skips the Provider model for this case.
+
+If a project is created with Getx, you have routes and pages which are governed
+by the routes folder. This is where we navigate and pass from one page to 
+another.
+
+Get.OffNamed
+Allows us to switch from routes.
+Get.lazyPut<UserProvider>(() => UserProvider());
+lazyPut is used when only a specific information needs to be obtained to load
+that page, in order words, manages our dependencies.
 
 
 
