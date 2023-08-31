@@ -26,8 +26,6 @@ sayi! -> not nullable where it is defined and declared.
 
 ---------------------------
 
-Packages e-pub.
-
 Dynamic takes all kinds of data and is upgradable within context. 
 Class not available.
 
@@ -111,7 +109,6 @@ void main() {
 Add a widget as stateapp and extend it;
 home screen example given.
 
-
 Navigation functionality allows you to swap from one widget or from one
 page to another. 
 -push adds a page on top 
@@ -127,6 +124,10 @@ such changes appear not possible - recheck this.
 Widgets get buildcontext as dependency injection inside them which allows us
 to manipulate widget properties. Widgets return other specific widgets such as
 MaterialApp, scaffold or cards in order to determine their type.
+
+Stateful widgets hold keys as reference to its widget tree. Any widget under
+a stateful widget needs to have its keys as reference for any change for the 
+widget.
 
 Within the code, it is possible to call if-conditional operations with
 <bool> ? condition1 : condition2.
@@ -152,10 +153,10 @@ debugShowCheckedModeBanner: false,
 removes the debug banner.
 
 flutter pub add get
-this adds the get library to flutter and comes with various changes.
-Whether a variable is a string, int or an object, it can be made observable.
-When a property is observable, observing widgets can set its state without
-a statefulwidget. Defs:
+this adds the get library to flutter and comes with various changes and easy 
+state management. Whether a variable is a string, int or an object, it can be 
+made observable. When a property is observable, observing widgets can set its 
+state without a statefulwidget. Defs:
 
 obs is observable,
 obx is observing widget.
@@ -199,8 +200,5 @@ Allows us to switch from routes.
 Get.lazyPut<UserProvider>(() => UserProvider());
 lazyPut is used when only a specific information needs to be obtained to load
 that page, in order words, manages our dependencies.
-
-
-
 
 */
