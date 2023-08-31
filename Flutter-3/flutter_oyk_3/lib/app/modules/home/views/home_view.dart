@@ -10,13 +10,27 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeView'),
+        title: const Text('Coolest counter app dude'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
+      body: Center(
+        child: Column(
+          children: [
+            const Text(
+              'Counter count:',
+              style: TextStyle(fontSize: 20),
+            ),
+            Obx(() => Text(
+                  "${controller.count.value}",
+                  style: Theme.of(context).textTheme.displayMedium,
+                )),
+            IconButton(
+                onPressed: () {
+                  controller.increment();
+                },
+                style: IconButton.styleFrom(minimumSize: const Size(40, 40)),
+                icon: const Icon(Icons.plus_one_sharp)),
+          ],
         ),
       ),
     );
