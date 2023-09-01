@@ -16,7 +16,7 @@ class HomeView extends GetView<HomeController> {
         actions: [
           IconButton(
               onPressed: () {
-                Get.offNamed(Routes.LOGIN);
+                controller.logout();
               },
               icon: const Icon(Icons.logout))
         ],

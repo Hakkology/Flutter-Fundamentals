@@ -31,4 +31,9 @@ class HomeController extends GetxController {
   }
 
   void increment() => count.value++;
+
+  Future<void> logout() async {
+    await box.remove("User");
+    Get.offAll(Routes.LOGIN);
+  }
 }
