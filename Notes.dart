@@ -24,8 +24,6 @@ int sayi; -> cannot be null.
 int? sayi; -> nullable integer.
 sayi! -> not nullable where it is defined and declared.
 
----------------------------
-
 Dynamic takes all kinds of data and is upgradable within context. 
 Class not available.
 
@@ -47,6 +45,8 @@ If required keyword is available
   - parameter should be given.
   - without the required keyword, parameter should be set as nullable.
     -> which requires an actual null check ?!?
+
+---------------------------
 
 Flutter Notes
 
@@ -200,5 +200,52 @@ Allows us to switch from routes.
 Get.lazyPut<UserProvider>(() => UserProvider());
 lazyPut is used when only a specific information needs to be obtained to load
 that page, in order words, manages our dependencies.
+
+---------------------------
+
+Request - Response Notes
+
+HTTP:
+Hypertext Transfer Protocol
+Hypertext means anything that may be displayed on computer screen.
+
+GET, => read
+POST, => create
+PUT, => update whole resource
+DELETE, => delete
+PATCH, => update part of resource
+OPTIONS,
+HEAD,
+
+RFC => Request for Comments
+
+2xx => 
+200 OK
+201 Created
+204 No Content => for delete request
+
+3xx =>
+301 Moved Permanently
+302 Found
+
+4xx =>
+400 Bad Request
+401 Authentication
+403 Forbidden (Authorization)
+404 Not Found
+418 I'm a teapot
+422 Unprocessable Entity
+
+5xx =>
+500 Not Working
+
+https is used with public and private keys. Data is not encrypted with the
+Client but sent encrypted through https so that other parties may not access it.
+
+SSL - TLS
+
+CA
+Let's Encrypt
+SSL
 
 */

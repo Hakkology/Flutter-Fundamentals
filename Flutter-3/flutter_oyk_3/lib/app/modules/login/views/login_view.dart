@@ -49,7 +49,9 @@ class LoginView extends GetView<LoginController> {
                     obscureText: controller.isObscure.value,
                   )),
               ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () async {
+                    await controller.login();
+                  },
                   icon: const Icon(Icons.login),
                   label: const Text("Login")),
             ],
