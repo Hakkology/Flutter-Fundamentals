@@ -11,7 +11,7 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LoginView'),
+        title: const Text('Login Page'),
         centerTitle: true,
       ),
       body: Center(
@@ -49,9 +49,7 @@ class LoginView extends GetView<LoginController> {
                     obscureText: controller.isObscure.value,
                   )),
               ElevatedButton.icon(
-                  onPressed: () {
-                    Get.offNamed(Routes.HOME);
-                  },
+                  onPressed: () {},
                   icon: const Icon(Icons.login),
                   label: const Text("Login")),
             ],
