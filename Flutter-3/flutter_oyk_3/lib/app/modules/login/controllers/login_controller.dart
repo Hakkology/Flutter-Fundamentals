@@ -38,7 +38,7 @@ class LoginController extends GetxController {
       box.write("User", response.toJson());
       Get.offAllNamed(Routes.HOME, arguments: response);
     } else {
-      Get.snackbar("ERROR", "401");
+      Get.snackbar("Error", "You failed to login dude.");
     }
   }
 }

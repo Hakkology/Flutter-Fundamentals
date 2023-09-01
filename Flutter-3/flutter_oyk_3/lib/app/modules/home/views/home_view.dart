@@ -15,8 +15,8 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
         actions: [
           IconButton(
-              onPressed: () {
-                controller.logout();
+              onPressed: () async {
+                await controller.logout();
               },
               icon: const Icon(Icons.logout))
         ],

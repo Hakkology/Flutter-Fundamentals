@@ -34,6 +34,6 @@ class HomeController extends GetxController {
 
   Future<void> logout() async {
     await box.remove("User");
-    Get.offAll(Routes.LOGIN);
+    Get.offAllNamed(Routes.LOGIN);
   }
 }

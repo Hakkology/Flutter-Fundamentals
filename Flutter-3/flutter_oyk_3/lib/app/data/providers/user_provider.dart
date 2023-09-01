@@ -29,7 +29,6 @@ class UserProvider extends GetConnect {
           country: "TR",
           id: "1");
     } else {
-      Get.snackbar("Error", "You failed to login dude.");
       return null;
     }
   }
